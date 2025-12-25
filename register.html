@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册 - 小兔鲜儿</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/auth.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, rgba(94, 182, 156, 0.1) 0%, rgba(233, 236, 239, 0.3) 100%), 
+        url(uploads/背景图.jpg) no-repeat center center fixed;
+      background-size: cover !important;
+      background-color: transparent !important;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+      position: relative;
+    }
+    
+    /* 增强表单效果 */
+    .auth-box {
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      transform: translateY(-10px); /* 稍微上移，更突出 */
+    }
+    
+    .shortcut, .header, .footer {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- 右上角姓名学号信息 -->
+  <div class="user-info">
+    <div class="student-id">学号：25216950302</div>
+    <div class="student-name">姓名：李妍茵</div>
+  </div>
+  
+  <!-- 注册表单区域 -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="auth-header">
+        <h2>🐇 小兔鲜儿</h2>
+        <p>欢迎加入小兔鲜儿，开启新鲜购物之旅</p>
+      </div>
+      
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="username">用户名</label>
+          <input type="text" id="username" name="username" placeholder="请输入用户名（3-20个字符）" required>
+          <div class="error-msg" id="usernameError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" placeholder="请输入邮箱地址" required>
+          <div class="error-msg" id="emailError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">密码</label>
+          <input type="password" id="password" name="password" placeholder="至少8位，包含字母和数字" required>
+          <div class="error-msg" id="passwordError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">确认密码</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码" required>
+          <div class="error-msg" id="confirmPasswordError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="captcha">验证码</label>
+          <div class="captcha-container">
+            <input type="text" id="captcha" name="captcha" placeholder="请输入验证码" required>
+            <div class="captcha-code" id="captchaCode">1234</div>
+            <button type="button" class="refresh-captcha" id="refreshCaptcha">刷新</button>
+          </div>
+          <div class="error-msg" id="captchaError"></div>
+        </div>
+        
+        <div class="form-group terms">
+          <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+          <label for="agreeTerms">我已阅读并同意 <a href="#" style="color: #5EB69C; text-decoration: none;">《用户服务协议》</a> 和 <a href="#" style="color: #5EB69C; text-decoration: none;">《隐私政策》</a></label>
+          <div class="error-msg" id="termsError"></div>
+        </div>
+        
+        <button type="submit" class="auth-btn">立即注册</button>
+        
+        <div class="auth-footer">
+          <p>已有账号？ <a href="login.html">立即登录</a></p>
+          <p style="margin-top: 10px; font-size: 12px; color: #999;">
+            <a href="index.html" style="color: #5EB69C; text-decoration: none; font-weight: 500;">返回首页</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/auth.js"></script>
+</body>
+</html>
