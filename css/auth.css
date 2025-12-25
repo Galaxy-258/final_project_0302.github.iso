@@ -1,0 +1,316 @@
+/* 认证页面样式 - register.html & login.html */
+
+/* 添加右上角信息 */
+.user-info {
+    position: fixed;
+    top: 5px; /* 靠上 */
+    right: 5px; /* 靠右 */
+    color: #1b1b1b;
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.15);  /* 半透明白色 */
+    padding: 10px 16px; /* 减小内边距让卡片更紧凑 */
+    border-radius: 10px; /* 圆角稍小 */
+    box-shadow: 0 4px 15px rgba(94, 182, 156, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* 白色边框 */
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-width: 130px; /* 宽度更小 */
+}
+
+.user-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(94, 182, 156, 0.25);
+    border-color: rgba(94, 182, 156, 0.3);
+}
+
+.user-info .student-id {
+    font-weight: 500;
+    color: #1b1b1b;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.user-info .student-name {
+    font-weight: 500;
+    color: #1b1b1b;
+    font-size: 15px;
+}
+
+.auth-container {
+    min-height: 600px;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth-box {
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-header {
+    padding: 30px;
+    background: #5EB69C;
+    color: white;
+    text-align: center;
+}
+
+.auth-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.auth-form {
+    padding: 25px 30px 20px 30px;
+}
+
+.form-group:first-of-type {
+    padding-top: 10px !important;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #5EB69C;
+    outline: none;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px !important;
+}
+
+#loginPassword {
+    width: 100%;
+    padding-right: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5EB69C;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    background: white;
+    padding: 2px 6px;
+    z-index: 1;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px !important;
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+}
+
+.remember input[type="checkbox"] {
+    margin: 0;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.remember label {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    height: 14px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: #5EB69C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.auth-btn:hover {
+    background: #4CAF87;
+}
+
+.auth-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.auth-footer {
+    margin-top: 12px !important;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #5EB69C;
+    font-weight: 500;
+}
+
+.captcha-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.captcha-container input {
+    flex: 1;
+}
+
+.captcha-code {
+    width: 100px;
+    height: 40px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #333;
+    user-select: none;
+}
+
+.refresh-captcha {
+    padding: 10px 15px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.refresh-captcha:hover {
+    background: #e5e5e5;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.terms input[type="checkbox"] {
+    margin-top: 3px;
+}
+
+.terms label {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.terms a {
+    color: #5EB69C;
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.success-msg {
+    color: #27ae60;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+@media (max-width: 480px) {
+    .auth-box {
+        width: 100%;
+        margin: 0 20px;
+    }
+    
+    .captcha-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .captcha-code {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    #loginPassword {
+        padding-right: 90px;
+    }
+    
+    .forgot-password {
+        font-size: 13px;
+        right: 8px;
+    }
+    
+    .user-info {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

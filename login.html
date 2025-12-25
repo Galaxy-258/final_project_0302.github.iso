@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 小兔鲜儿</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/auth.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, rgba(94, 182, 156, 0.1) 0%, rgba(233, 236, 239, 0.3) 100%), url(uploads/背景图.jpg) no-repeat center center fixed;
+      background-size: cover !important;
+      background-color: transparent !important;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+      position: relative;
+    }
+    
+    /* 增强表单效果 */
+    .auth-box {
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      transform: translateY(-10px); /* 稍微上移，更突出 */
+    }
+    
+    .shortcut, .header, .footer {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- 右上角姓名学号信息 -->
+  <div class="user-info">
+    <div class="student-id">学号：25216950302</div>
+    <div class="student-name">姓名：李妍茵</div>
+  </div>
+  
+  <!-- 登录表单区域 -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="auth-header">
+        <h2>🐇 小兔鲜儿</h2>
+        <p>欢迎回到小兔鲜儿，开启新鲜购物之旅</p>
+      </div>
+      
+      <form id="loginForm" class="auth-form">
+        <div class="form-group">
+          <label for="loginUsername">用户名/邮箱</label>
+          <input type="text" id="loginUsername" name="loginUsername" placeholder="请输入用户名或邮箱" required>
+          <div class="error-msg" id="loginUsernameError"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="loginPassword">密码</label>
+          <div class="password-container">
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="请输入密码" required>
+            <a href="#" class="forgot-password">忘记密码？</a>
+          </div>
+          <div class="error-msg" id="loginPasswordError"></div>
+        </div>
+        
+        <div class="remember">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          <label for="rememberMe">记住我</label>
+        </div>
+        
+        <button type="submit" class="auth-btn">立即登录</button>
+        
+        <div class="auth-footer">
+          <p>还没有账号？ <a href="register.html">立即注册</a></p>
+          <p style="margin-top: 10px; font-size: 12px; color: #999;">
+            <a href="index.html" style="color: #5EB69C; text-decoration: none; font-weight: 500;">返回首页</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/auth.js"></script>
+</body>
+</html>

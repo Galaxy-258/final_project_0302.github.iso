@@ -1,0 +1,803 @@
+/* banner区域 */
+.banner{
+  /* height: 500px; */
+  background-color: #f5f5f5;
+}
+.banner .wrapper{
+  display: flex;
+  position: relative;
+}
+
+/* 侧导航 */
+.subnav{
+  width: 250px;
+  background-color: rgba(0, 0, 0,0.6);
+}
+.subnav li{
+  display: flex;
+  height: 50px;
+  padding: 14px 12px 14px 29px;
+  position: relative;
+}
+.subnav a,
+.subnav .iconfont{
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+}
+.subnav a{
+  margin-right: 5px;
+}
+.subnav h4{
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 14px;
+}
+/* 添加悬停效果 */
+.subnav li:hover {
+  background-color: #5EB69C;
+}
+.subnav li:hover a,
+.subnav li:hover .iconfont {
+    color: #fff;
+}
+
+/* 确保箭头位置正确 */
+.subnav .iconfont {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    transition: color 0.3s;
+}
+.subnav li::after {
+  content: "❯";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.8; 
+}
+/* 轮播图 */
+.pic{
+  display: flex;
+  width: 990px;
+  overflow: hidden;
+}
+.pic img{
+  width: 990px;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* 圆点 */
+.banner ol{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.banner ol li{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.banner i{
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+/* 点击圆点，给 li 和 i 分别添加背景颜色属性 */
+.active{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.active i{
+  background-color: rgb(255, 255, 255);
+}
+
+/* 新鲜好物 */
+.goods{
+  background-color: #fff;
+}
+.goods .title, .brand .title, .fresh .title{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.goods .title{
+  height: 102px;
+  margin-top: 10px;
+
+}
+.title h3{
+  font-size: 30px;
+  line-height: 42px;
+  margin-right: 35px;
+}
+.title p,
+.title a,
+.title .iconfont{
+  color: #A1A1A1;
+}
+.title p{
+  position: relative;
+  bottom: -8px;
+}
+.title .all{
+  position: absolute;
+  right: 0;
+}
+.goods .title .iconfont{
+  margin-left: 10px;
+}
+
+/* 更新商品卡片样式 - 添加悬停动画和阴影效果 */
+.goods ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.goods ul li{
+  width: 304px;
+  background-color: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  position: relative;
+  margin-bottom: 10px; /* 减小底部间距 */
+  min-height: 420px; /* 增加最小高度 */
+}
+
+.goods ul li:hover {
+  transform: translateY(-5px);
+}
+
+/* 添加商品标签 */
+.goods .bd li::before {
+  content: attr(data-tag);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e26237;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* 设置不同商品的标签 */
+.goods .bd li:nth-child(1)::before { content: "热卖"; }
+.goods .bd li:nth-child(2)::before { content: "新品"; }
+.goods .bd li:nth-child(3)::before { content: "推荐"; }
+.goods .bd li:nth-child(4)::before { content: "特价"; }
+
+.goods ul img{
+  height: 304px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.goods ul li:hover img {
+  transform: scale(1.05);
+}
+
+.bd .price{
+  background-color: #EEF9F4;
+}
+.goods .price p{
+  text-align: center;
+  font-size: 22px;
+  color: #AA2113;
+}
+.goods .price a{
+  display: block;
+  font-size: 20px;
+  padding: 17px 0 4px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.goods .price a:hover {
+  color: #5EB69C;
+}
+
+/* 人气推荐样式优化 */
+.recommend .price p{
+  font-size: 16px;
+  color: #A1A1A1;
+  padding-bottom: 6px;
+}
+.recommend{
+  margin-bottom: 60px;
+}
+
+/* 热门品牌 */
+.brand{
+  height: 468px;
+  background-color: #f1f1f1;
+}
+.brand .title{
+  height: 122px;
+
+}
+.brand .title .jiantou {
+  bottom: 13px;  /* 专门针对品牌区域的箭头向下移动 */
+}
+.title .jiantou{
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.jiantou .left, .jiantou .right{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e4e4e4;
+  line-height: 20px;
+  text-align: center;
+}
+.jiantou .left{
+  margin-right: 12px;
+}
+.jiantou .left::after {
+  content: "❮";
+  font-weight: 100;  
+  font-size: 15px;
+}
+
+.jiantou .right::after {
+  content: "❯";
+  font-weight: 100;  
+  font-size: 15px;
+}
+
+.jiantou .iconfont{
+  display: none; 
+}
+
+.jiantou span:hover{
+  background-color: #5EB69C;
+}
+.brand ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.brand ul li {
+  background-color: white;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  padding: 0;  /* 从15px减少到10px */
+  text-align: center;
+  width: 243.99px;
+  height: auto;
+}
+.brand ul li:hover {
+  transform: translateY(-5px)
+}
+.brand ul li:hover {
+  transform: translateY(-5px);
+}
+.brand ul li img {
+  height: 305.98px;
+  /* max-width: 100%; */
+  width: 243.99px;
+  object-fit: cover;
+  /* margin-bottom: 15px; */
+}
+
+/* 生鲜 */
+.fresh{
+  padding-top: 20px;
+}
+.fresh .title{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.fresh .title ul{
+  display: flex;
+  position: absolute;
+  right: 134px;
+}
+.fresh .title ul a{
+  display: block;
+  height: 22px;
+  line-height: 22px;
+  color: #333;
+  padding: 0 7px;
+  margin-right: 6px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.fresh .title ul a:hover{
+  background-color: #5EB69C;
+  color: #fff;
+}
+.fresh .content{
+  display: flex;
+  gap: 24px;
+}
+.fresh .content .left{
+  width: 248px;
+  height: 610px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.fresh .content .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fresh .content .right ul{
+  display: flex;
+  width: 968px;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.fresh .content .right li{
+  width: 242px;
+  height: 340px;
+  padding: 0 26px 70px 26px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  margin: 0;
+  position: relative;
+}
+.fresh .content .right li:hover {
+  transform: translateY(-5px);
+}
+.fresh .content .right img{
+  width: 190px;
+  height: 160px;
+  margin: 14.5px 0;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.fresh .content .right li:hover img {
+  transform: scale(1.05);
+}
+.fresh .content .right a{
+  display: block;
+  width: 192px;
+  line-height: 19px;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.fresh .content .right a:hover {
+  color: #5EB69C;
+}
+.fresh .content .right span{
+  font-size: 22px;
+  line-height: 45px;
+  color: #AF2F22;
+  font-weight: bold;
+}
+.fresh .content .right i{
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+/* 最新专题 */
+.topic{
+  padding-top: 70px;
+}
+.topic .title{
+  margin: 30px 0;
+  position: relative;
+}
+.topic ul{
+  height: 395px;
+  display: flex;
+  gap: 0;
+  justify-content: flex-start;
+}
+.topic li {
+  background-color: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  position: relative;
+  margin: 0;  /* 确保没有外边距 */
+  flex: 1;
+}
+.topic li:hover {
+  transform: translateY(-5px);
+}
+.topic li img{
+  display: block;
+  width: 100%;
+  height: 288px;
+  margin-bottom: 23px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.topic li:hover img {
+  transform: scale(1.05);
+}
+
+.topic .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 最新专题底部信息区域 */
+.topic-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 15px;
+  background: #f8f8f8;
+  align-items: center;
+  height: 60px;
+  margin-top: -20px;  /* 整体往上移动20像素 */
+  width: 100%; /* 确保宽度与上面图片一致 */
+  box-sizing: border-box; /* 包含padding在宽度内 */
+  border-radius: 0; /* 与图片容器保持一致 */
+  overflow: hidden;  /* 与图片容器保持一致 */
+}
+
+.topic-icon {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  color: #666;
+  font-size: 14px;
+  height: 16px;
+  
+}
+
+
+.topic-icon .icon-img {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: relative;
+  top: 2px;
+}
+
+.topic-icon span { /* 确保数字也垂直居中 */
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.topic-icon:first-child {
+  gap: 5px;  /* 控制收藏和浏览之间的距离 */
+}
+
+.topic-icon:first-child p {
+  width: 15px;  /* 控制收藏和浏览之间的距离 */
+  height: 1px;  /* 最小高度 */
+  margin: 0;    /* 清除默认边距 */
+  display: inline-block; /* 让p标签参与布局 */
+}
+
+/* 响应式调整 */
+@media (max-width: 1240px) {
+  .wrapper {
+      width: 100%;
+      padding: 0 20px;
+  }
+  
+  .goods ul,
+  .brand ul,
+  .topic ul {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .goods ul li,
+  .brand ul li {
+      width: calc(50% - 20px);
+      margin-bottom: 20px;
+  }
+  
+  .fresh .content {
+      flex-direction: column;
+  }
+  
+  .fresh .content .left {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  .fresh .content .right ul {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .goods ul li,
+  .brand ul li,
+  .fresh .content .right li {
+      width: 100%;
+  }
+  
+  .topic li {
+      width: 100%;
+  }
+  
+  .topic li img {
+      width: 100%;
+  }
+}
+/* 轮播图容器 */
+.carousel-container {
+  position: relative;
+  width: 990px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+/* 轮播图幻灯片 */
+.banner-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.banner-slide.active {
+  opacity: 1;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 轮播图箭头 */
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.banner-arrow:hover {
+  background-color: white;
+}
+
+.banner-prev {
+  left: 20px;
+}
+
+.banner-next {
+  right: 20px;
+}
+
+/* 轮播图指示点 */
+.banner-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.banner-dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* 查看全部的箭头图标 */
+.all .iconfont {
+  display: none; /* 隐藏原来的图标 */
+}
+
+.all::after {
+  content: "❯";
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 300; /* 用更细的字重 */
+  opacity: 0.8; /* 调整透明度 */
+}
+
+.service-icon {
+  width: 14px;
+  height: 14.9px;
+  vertical-align: middle;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;  /* 往上移动1像素 */
+}
+
+/* 加入购物车按钮样式 */
+.goods .price button.add-to-cart,
+.fresh .content .right button.add-to-cart,
+.brand ul li .brand-price button.add-to-cart {
+    background: #5EB69C;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: background-color 0.3s;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+}
+
+.goods ul li:hover .price button.add-to-cart,
+.fresh .content .right li:hover button.add-to-cart,
+.brand ul li:hover .brand-price button.add-to-cart {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.goods .price button.add-to-cart:hover,
+.fresh .content .right button.add-to-cart:hover,
+.brand ul li .brand-price button.add-to-cart:hover {
+    background: #4CAF87;
+}
+
+/* 调整新鲜好物商品卡片价格区域高度 */
+.goods .price {
+    height: 148px; /* 增加高度以适应购物车按钮 */
+    padding: 15px;
+    margin-top: -15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 品牌区域购物车按钮容器 */
+.brand ul li {
+    position: relative;
+    overflow: hidden;
+}
+
+.brand ul li .brand-price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.brand ul li:hover .brand-price {
+    transform: translateY(0);
+}
+
+.brand ul li .brand-price p {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.brand ul li .brand-price p:nth-child(2) {
+    color: #AA2113;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 生鲜区域购物车按钮 */
+.fresh .content .right li {
+    position: relative;
+    padding-bottom: 70px; /* 为购物车按钮留出空间 */
+}
+
+/* 生鲜区域购物车按钮 - 底部滑入效果 */
+.fresh .content .right button.add-to-cart {
+  position: absolute;
+  bottom: 5px; /* 保持在卡片内部底部 */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px); /* 初始在下方20px处（不可见区域） */
+  width: calc(100% - 52px);
+  padding: 10px 12px;
+  background: #5EB69C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0; /* 初始不可见 */
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* 悬停时从底部滑入 */
+.fresh .content .right li:hover button.add-to-cart {
+  opacity: 1; /* 悬停时可见 */
+  transform: translateX(-50%) translateY(0); /* 滑入到卡片底部 */
+}
+
+/* 提示消息样式 */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #5EB69C;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
